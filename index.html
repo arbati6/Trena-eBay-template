@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>trena</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:700|Roboto:300&amp;subset=latin-ext" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+    }
+
+    a {
+        color: #000;
+    }
+
+    a:hover {
+        color: #e13758;
+    }
+    .template_container {
+        max-width: 1170px;
+        margin: 0 auto;
+        font-family: Roboto;
+        font-weight: 300;
+    }
+    header {
+        display: block;
+        width: 100%;
+    }
+    .hero_img {
+        background-image: url(img/hero_img.jpg); /* INSERT HERE YOUR BACKGROUND IMAGE FROM SERVER */
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 300px;
+        position: relative;
+    }
+    img.logo {
+        position: absolute;
+        margin: auto;
+        right: 0;
+        left: 0;
+        top: 0;
+        bottom: 0;
+    }
+
+
+     /*Style 'show menu' label button and hide it by default*/
+     .mobile-menu .show-menu {
+      display: none;
+      cursor: pointer;
+    }
+    
+    /*Hide checkbox*/
+    .mobile-menu input[type=checkbox]{
+        display: none;
+    }
+
+    .mobile-menu input[type=checkbox]:checked ~ #menu {
+        display: block;
+    }
+    
+
+    header nav {
+        height: 53px;
+        background: #000;
+        color: #fff;
+    }
+    nav ul {
+        margin: 0 50px;
+        float: right;
+    }
+    nav ul li {
+        display: inline-block;
+        margin: 18px 20px;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        padding-top: 13px;
+        background-color: #000000;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        font-size: 12px;
+        color: #ffffff;
+        padding: 10px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown-content a:hover {
+        color: #e13758;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    .dropdown:hover .dropbtn {
+        color: #e13758;
+    }
+
+    a.bestsellers {
+        background-color: #e13758;
+        padding: 17px 55px;
+        font-family: "Roboto Condensed";
+        float: right;
+    }
+
+    a.bestsellers:hover {
+        color: #fff;
+        background-color: #e3284d;
+    }
+    .product_img {
+        float: left;
+        display: block;
+        position: relative;
+        height: 640px;
+        width: 50%;
+    }
+    img.photo_1 {
+        position: absolute;
+        z-index: -1;
+        margin: auto;
+        bottom: 0;
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+    .product_description {
+        float: right;
+        width: 50%;
+        margin: 30px 0 0 0;
+    }
+    .product_description span.producent {
+        background-color: #e13758;
+        padding: 10px 20px;
+        font-size: 14px;
+        color: #fff;
+        float: left;
+    }
+    .product_description p {
+        line-height: 24px;
+        text-align: justify;
+        width: 95%;
+    }
+    .product_name {
+        font-family: "Roboto Condensed";
+        font-size: 28px;
+    }
+    .watch_list {
+        position: absolute;
+        font-size: 13px;
+        line-height: 18px;
+        bottom: 20px;
+    }
+    .watch_list img {
+        float: left;
+        padding: 7px 15px;
+    }
+    .watch_list p {
+        float: left;
+        margin: 0;
+    }
+    .advanced {
+        clear: both;
+        float: left;
+        background: #000;
+        width: 100%;
+        color: #fff;
+        height: 189px;
+    }
+    .advanced strong {
+        font-size: 24px;
+        font-family: "Roboto Condensed";
+    }
+    .advanced p, .advanced img {
+        float: left;
+    } 
+    .advanced img {
+        margin: 35px 20px;
+    }
+    .advanced span {
+        border-right: #404040 1px solid;
+        width: 1px;
+        height: 80%;
+        margin: 20px 0;
+        display: block;
+        float: left;
+    }
+    .advanced_1, .advanced_2, .advanced_3 {
+        float: left;
+        width: 300px;
+        margin: 0 44px;
+        padding: 44px 0;
+    }
+    .advanced_3 p {
+        margin: 30px 0 0 0;
+    }
+    .about {
+        clear: both;
+        float: left;
+        width: 100%;
+    }
+    img.about_map {
+        width: 50%;
+        float: left;
+        display: block;
+    }
+    .about_description {
+        width: 50%;
+        float: left;
+    }
+    .about p {
+        text-align: center;
+        margin: 30px auto 0 auto;
+    }
+    .about strong {
+        font-family: "Roboto Condensed";
+        font-size: 18px;
+        line-height: 32px;
+    }
+    p.about_text {
+        font-size: 14px;
+        line-height: 24px;
+        text-align: justify;
+        width: 80%;
+    }
+    img.about_logo {
+        margin: 0 auto;
+        padding: 50px 0 20px 0;
+        display: block;
+    }
+    footer {
+        display: block;
+        clear: both;
+        float: left;
+        background: #000;
+        color: #fff;
+        width: 100%;
+        position: relative;
+    }
+    .footer_menu {
+        margin: 0 auto;
+        width: 840px;
+    }
+    footer ul {
+        float: left;
+        margin-right: 70px;
+    }
+    footer h2 {
+        font-weight: 300;
+        text-align: center;
+        letter-spacing: 3px;
+        font-size: 24px;
+        padding: 30px 0 0 0;
+    }
+    footer ul li {
+        display: block;
+        font-size: 12px;
+        line-height: 24px;
+    }
+    footer ul li a {
+        color: #fff;
+        text-decoration: none;
+    }
+    li.cate_header  {
+        font-size: 16px;
+        font-family:  "Roboto Condensed";
+        line-height: 45px;
+    }
+    footer nav {
+        clear: both;
+        width: 100%;
+        margin: 0 auto;
+        height: 59px;
+        border-top: #404040 1px solid;
+        border-bottom: #404040 1px solid;
+    }
+    footer nav span {
+        margin: 0 10px;
+    }
+    footer nav p {
+        margin: 0 auto;
+        width: 210px;
+        padding: 20px;
+        font-size: 14px;
+    }
+    .copyright {
+        color: #888;
+        font-size: 12px;
+        text-align: center;
+        width: 230px;
+        margin: 0 auto;
+        position: relative;
+        padding: 30px;
+    }
+    a.go_top {
+        font-size: 12px;
+        color: #fff;
+        text-decoration: none;
+        right: 30px;
+        position: absolute;
+        bottom: 30px;
+    }
+    .go_top img {
+        padding: 3px;
+        margin: 0 5px;
+    }
+    img.getecom {
+        clear: both;
+        float: right;
+        margin: 20px;
+    }
+
+
+        @media only screen and (max-width: 1184px) {
+
+          .advanced_1, .advanced_2, .advanced_3 {
+              margin: 0 18px;
+          }
+
+        }
+
+
+
+    /*tablet*/
+    @media only screen and (max-width: 1024px) {
+        
+        /*Make dropdown links appear inline*/
+        .mobile-menu ul {
+            position: static;
+            display: none;
+            position: absolute;
+            background: #000;
+            margin-top: 53px;
+            left: -50px;
+            z-index: 999;
+        }
+        /*Make all menu links full width*/
+        .mobile-menu ul li, .mobile-menu li a {
+            width: 100%;
+        }
+        /*Display 'show menu' link*/
+        .mobile-menu .show-menu {
+            display:block;
+        }
+
+        .menu_mobile {
+            padding: 15px 27px;
+        }
+
+        nav ul {
+            margin-left: 20px;
+        }
+
+        .dropdown-content {
+            padding-top: 0px;
+            left: 180px;
+            border-left: 1px solid rgba(255,255,255,0.1);
+        }
+
+
+    img.logo {   
+        width: 240px;
+    }
+    .menu_mobile {
+        padding: 15px 27px;
+        float: left;
+        display: block;
+        background: #000;
+    }
+    .product_img {
+        width: 100%;
+    }
+    img.photo_1 {
+        max-width: 100%;
+    }
+    .product_description {
+        width: 95%;
+        margin: 30px 2.5% 0 2.5%;
+    }
+    .product_description p {
+        width: 100%;
+    }
+    .watch_list {
+        bottom: 0;
+        width: 270px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    .advanced {
+        height: auto;
+    }
+    .advanced span {
+        display: none;
+    }
+    .advanced_1, .advanced_2, .advanced_3 {
+        width: 235px;
+        font-size: 14px;
+        margin: 0 4px;
+    }
+
+    .advanced_2 {
+        width: 266px;
+    }
+
+    .about {
+        width: 100%;
+    }
+    .about p {
+        width: 85%;
+    }
+    img.about_map {
+        width: 100%;
+    }
+    .about_description {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    .footer_menu {
+        width: 100%;
+    }
+    footer ul li {
+        line-height: 34px;
+    }
+    a.go_top {
+        margin: 20px auto;
+        width: 100px;
+        display: block;
+        position: static;
+    }
+    img.getecom {
+        margin: 0 auto;
+        padding: 20px;
+        display: block;
+        float: none;
+    }
+    }
+
+
+    @media only screen and (max-width: 848px) {
+	
+	.product_description p {
+		font-size: 14px;
+	}
+
+        footer ul {
+            margin-right: 40px;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 778px) {
+        .advanced {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .advanced_1, .advanced_2, .advanced_3 {
+            padding: 0;
+            width: 280px;
+            font-size: 14px;
+            margin: 0 5px;
+
+        }
+
+        footer ul {
+            margin-right: 0px;
+        }
+
+    }
+
+    @media only screen and (max-width: 578px) {
+
+        .advanced {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer_menu {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+    }
+
+    /*smarpthone*/
+    @media only screen and (max-width: 480px) {
+    img.logo {   
+        width: 240px;
+    }
+    a.bestsellers {
+        padding: 18px 30px;
+        font-size: 14px;
+    }
+
+    .menu_mobile {
+        float: left;
+        display: block;
+    }
+    .product_img {
+        width: 100%;
+    }
+    img.photo_1 {
+        width: 100%;
+    }
+    .product_description {
+        width: 95%;
+        margin: 30px 2.5% 0 2.5%;
+    }
+    .product_description p {
+        width: 100%;
+    }
+    .watch_list {
+        bottom: 0;
+        width: 270px;
+        right: 0;
+        left: 0;
+        margin: auto;
+    }
+    .advanced {
+        height: auto;
+    }
+    .advanced span {
+        display: none;
+    }
+    .advanced_1, .advanced_2, .advanced_3 {
+        width: 280px;
+        font-size: 14px;
+        margin: 0 5px;
+    }
+    .about {
+        width: 100%;
+    }
+    .about p {
+        width: 85%;
+    }
+    img.about_map {
+        width: 100%;
+    }
+    .about_description {
+        width: 100%;
+        margin: 0 0 20px 0;
+    }
+    
+    footer ul li {
+        line-height: 34px;
+    }
+    a.go_top {
+        margin: 20px auto;
+        width: 100px;
+        display: block;
+        position: static;
+    }
+    img.getecom {
+        margin: 0 auto;
+        padding: 20px;
+        display: block;
+        float: none;
+    }
+    
+    }
+    </style>
+    
+
+</head>
+
+
+<body>
+    <div class="template_container">
+        <header id="header">
+            <div class="hero_img">
+                <img class="logo" src="img/logo.png"> <!--INSTEAD OF img/logo.png INSERT LINK TO YOUR IMAGE LOGO FROM SERVER-->
+            </div>
+            <nav id="nav" role="navigation" class="mobile-menu">
+                    <input type="checkbox" id="show-menu">
+                <a class="bestsellers" href="#">MOST POPULAR PRODUCTS</a>  <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <ul id="menu">
+                    <li class="dropdown"><a href="#nav" class="dropbtn">HAIR CARE & STYLING</a> 
+                        <div class="dropdown-content">
+                            <a href="#">Hair Colourants</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Shampoos & Conditioners</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Styling Products</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Treatments, Oils & Protectors</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Brushes & Combs</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#nav" class="dropbtn">BATH & BODY</a> 
+                        <div class="dropdown-content">
+                            <a href="#">Face</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Body</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Feet</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#nav" class="dropbtn">MAKEUP</a>
+                        <div class="dropdown-content">
+                            <a href="#">Face</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Eyes</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Lips</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                        </div>
+                    </li>
+                    <li class="dropdown"><a href="#nav" class="dropbtn">FRAGRANCES</a>
+                        <div class="dropdown-content">
+                            <a href="#">Men's Fragrances</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Women's Fragrances</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                            <a href="#">Unisex Fragrances</a> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="menu_mobile mobile-menu">
+                        <label for="show-menu" class="show-menu"><img src="img/menu_mobile.png"></label> <!--INSTEAD OF img/menu_mobile.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                        <input type="checkbox" id="show-menu">
+                </div>
+            </nav>
+
+
+
+        </header>
+        <main>
+           <div class="product_img">
+                <div class="watch_list">
+                    <img src="img/eye_icon.png"> <!--INSTEAD OF img/eye_icon.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                    <p>
+                    <strong> Want promotions updates? </strong><br>
+                    Add this product to the Watch list. </p>  <!--INSERT YOUR LINK TO WATCH LIST IN href="#" INSTEAD OF # -->
+                </div>
+                <img class="photo_1" src="img/product_img.jpg"> <!--INSTEAD OF img/product_img.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+            </div>
+            <div class="product_description">
+                <h1 class="product_name">BOURJOIS Twist Up The Volume Maskara 8ml</h1>
+                <span class="producent">PRODUCENT</span>
+                <img src="img/producent_logo.png" class="producent_logo"> <!--INSTEAD OF img/producent_logo.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                <p>
+                With the introduction of Twist Up the Volume Bourjois mascara, there also appeared a brush that has never been seen before!<br><br>
+
+                The innovative mechanism allows to apply in two positions that will allow you to meet two objectives – extension and volume!<br><br>
+
+                TWIST 1 – extension lash after lash: the brush evenly distributes the product along all lashes throughout their length. The net of separating fibers provides an ideal separation.<br><br>
+
+                TWIST 2 – Extreme volume: Twist the end and the brush will shorten and thicken which will allow you to build super volume without lumps.<br><br>
+
+                Intensive black formula of Twist Up the Volume mascara guarantees maximum extension and volume.<br><br>
+
+                The smooth consistency of allows to repeat the application of the product many times.
+
+                </p>
+            </div>
+            <div class="advanced">
+                <div class="advanced_1"><img src="img/adv_1_icon.png"><p><strong>48 hours<br></strong>We begin executing<br> the order within</p></div> <!--INSTEAD OF img/adv_1_icon.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                <span></span>
+                <div class="advanced_2"><img src="img/adv_2_icon.png"><p><strong>30 days<br></strong>You can return bought products<br> within 3 weeks</p></div> <!--INSTEAD OF img/adv_2_icon.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                <span></span>
+                <div class="advanced_3"><img src="img/adv_3_icon.png"><p>Please remember to fill out<br> the delivery form</p></div> <!--INSTEAD OF img/adv_3_icon.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+            </div>
+            <div class="about">
+                <div class="about_description">
+                        <p><strong>CURRENT ACTIVE MARKETS</strong><br>Poland  |  United Kingdom  |  Germany  |  Italy  |  Spain  |  France</p>
+                        <img class="about_logo" src="img/about_logo.png"> <!--INSTEAD OF img/about_logo.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                        <p class="about_text">Trena is a rapidly growing on-line distributor of hair and beauty products. We are present in markets of the largest European countries. Our offer consists of a wide range of professional hair and beauty brands, as well as makeup, nail, hair and body daily care products. Thanks to the innovative warehouse and logistics solutions, we are able to process hundreds of thousands orders yearly. Our offer is aimed at hair and beauty salons thus we guarantee the customer service they deserve.</p>
+                </div>
+                <img class="about_map" src="img/map.jpg"> <!--INSTEAD OF img/map.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+                
+            </div>
+        </main>
+        <footer>
+            <h2>CATEGORIES</h2>
+            <div class="footer_menu">
+            <ul>
+                <li class="cate_header"><a href="#" style="pointer-events: none; cursor: default;">Hair Care & Styling</a></li>
+                <li><a href="#">Hair Colourants</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Shampoos & Conditioners</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Styling Products</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Treatments, Oils & Protectors</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Brushes & Combs</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+            </ul>
+            <ul>
+                <li class="cate_header"><a href="#" style="pointer-events: none; cursor: default;">Bath & Body</a></li>
+                <li><a href="#">Face</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Body</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Feet</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+            </ul>
+            <ul>
+                <li class="cate_header"><a href="#" style="pointer-events: none; cursor: default;">Makeup</a></li>
+                <li><a href="#">Face</a></li>  <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Eyes</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Lips</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+            </ul>
+            <ul>
+                <li class="cate_header"><a href="#" style="pointer-events: none; cursor: default;">Fragrances</a></li>
+                <li><a href="#">Men's Fragrances</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Women's Fragrances</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                <li><a href="#">Unisex Fragrances</a></li> <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+            </ul>
+            </div>
+            <nav>
+                <p>
+                    <a href="#">ABOUT TRENA</a>  <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                    <span>|</span>
+                    <a href="#">COMMENTS</a>  <!--INSERT YOUR LINK IN href="#" INSTEAD OF # -->
+                </p>
+            </nav>
+            <div class="copyright">© 2018 Trena Sp. z o.o. All Rights Reserved</div>
+            <a href="#" class="go_top">BACK TO TOP<img src="img/top_icon.png"></a>  <!--INSTEAD OF img/top_icon.png INSERT LINK TO YOUR IMAGE FROM SERVER-->
+        </footer>
+ 
+    </div>
+
+
+
+
+   
+</body>
+</html>
